@@ -1,8 +1,5 @@
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom"
 import Body from "./Body"
-import Footer from "./Footer"
-import Header from "./Header"
-import Contact from "./Cart"
 import ResContainer from "./ResContainer"
 import Cart from "./Cart"
 import Search from "./Search"
@@ -13,6 +10,10 @@ const Appmain =()=>{
     const appRouter = createBrowserRouter([
         {
             path:'/',
+            element:<Body />,
+        },
+        {
+            path:'/Clone_SwiggyWebsite_Reactjs',
             element:<Body />,
         },
         {
@@ -31,6 +32,7 @@ const Appmain =()=>{
         <div>
             {/* <Header /> */}
             {/* <Body /> */}
+          
               <RouterProvider router={appRouter} />
             {/* <Footer /> */}
         </div>
