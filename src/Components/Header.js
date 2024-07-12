@@ -6,7 +6,7 @@ import { IoHelpBuoyOutline } from "react-icons/io5";
 import { GrContactInfo } from "react-icons/gr";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addfilteredsearch } from "../Utilis/TopSlice";
+import { addcity, addfilteredsearch } from "../Utilis/TopSlice";
 
 const Header = ()=>{
     const val = useRef(null)
@@ -22,10 +22,20 @@ const Header = ()=>{
        return acc + ele.length
     },0)
    
-   
     return(
         <nav className="w-[100%] p-4 h-20 flex justify-between shadow-xl items-center">        
            <div><Link to='/'><img src={SWIGGY_LOGO} className="w-[60%] h-14"></img></Link></div> 
+           <div className="">
+            <select className="w-72 text-xl h-14 border border-b-orange-600" onChange={(e)=>{
+                console.log(e.target.value)
+                dispatch(addcity(e.target.value))
+            }}>
+                <option value="Hyderabad" defaultValue={true}>Hyderabad</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Vizag">Vizag</option>
+            </select>
+           </div>
             <div className="w-2/5 relative border border-black flex rounded-xl">
             <input className="h-12 w-4/5 border rounded-l-xl overflow-hidden" ref={val}></input>
             <button className="w-1/5  h-12 rounded-r-xl bg-[#FF5D0D]" onClick={()=>{

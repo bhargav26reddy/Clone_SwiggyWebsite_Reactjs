@@ -10,6 +10,7 @@ import Shimmer from "./Shimmer";
 import { ShimmerThumbnail } from "react-shimmer-effects";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { CITIES } from "../Utilis/Constants";
 
 
 const Body =()=>{
@@ -21,8 +22,11 @@ const Body =()=>{
     const resa = useSelector((store)=>store.Topratedcusines.resMenu)
    
     const getresults =async()=>{
+        const obj = CITIES[toprated?.city]?CITIES[toprated?.city]:CITIES["Hyderabad"]
+        console.log(obj, 'obj')
         setSim(true)
-        const data = await fetch('https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+        // https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+        const data = await fetch(`https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=${obj.lat}&lng=${obj.lon}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`)
         const json = await data.json()
         dispatch(addTopcusines(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info))
         dispatch(addTopreschains(
@@ -38,7 +42,7 @@ const Body =()=>{
         getresults()
         window.addEventListener("scroll",handleScroll)
         return ()=> window.removeEventListener("scroll",handleScroll)
-    },[])
+    },[toprated.city])
 
     const handleScroll =()=>{        
         if( window.scrollY + window.innerHeight >= document.body.scrollHeight -5){
@@ -74,7 +78,7 @@ const Body =()=>{
             </div>
             {/* Top restaurant chains in Bangalore */}
             <div className="Topreschains">
-                <h1 className="font-bold">Top restaurant chains in Bangalore</h1>
+                <h1 className="font-bold">{`Top restaurant chains in ${toprated?.city?toprated?.city:"Hyderabad"}`}</h1>
                 <div className="flex overflow-x-scroll">
                 {
                     toprated.Topreschain.map((data)=><Link to={`/res/${data.info.id}`}><ResCard key={data.info.id} info={data.info}/></Link>)
@@ -84,7 +88,7 @@ const Body =()=>{
             </div>
              {/* Restaurants with online food delivery in Bangalore*/}
             <div className="Topreschains">
-                <h1 className="font-bold">Restaurants with online food delivery in Bangalore</h1>
+                <h1 className="font-bold">{`Restaurants with online food delivery in ${toprated?.city?toprated?.city:"Hyderabad"}`}</h1>
                 <div className="flex flex-wrap">
                 {
                     toprated.Allres[0]?.map((data)=><Link to={`/res/${data.info.id}`}><ResCard key={data.info.id} info={data.info}/></Link>)
