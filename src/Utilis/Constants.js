@@ -2,15 +2,15 @@ export const SWIGGY_LOGO = "https://1000logos.net/wp-content/uploads/2021/05/Swi
 
 
 export const CITIES ={
-   "Hyderabad":{
-        name:"Hyderabad",
-        lat:"17.406498",
-        lon:"78.47724389999999"
-    },
     "Bangalore":{
         name:"Bangalore",
         lat:"12.9715987",
         lon:"77.5945627"
+    },
+   "Hyderabad":{
+        name:"Hyderabad",
+        lat:"17.406498",
+        lon:"78.47724389999999"
     },
     "Mumbai":{
         name:"Mumbai",

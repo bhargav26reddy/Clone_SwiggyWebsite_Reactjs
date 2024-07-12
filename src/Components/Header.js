@@ -30,8 +30,8 @@ const Header = ()=>{
                 console.log(e.target.value)
                 dispatch(addcity(e.target.value))
             }}>
-                <option value="Hyderabad" defaultValue={true}>Hyderabad</option>
                 <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad" defaultValue={true}>Hyderabad</option>
                 <option value="Mumbai">Mumbai</option>
                 <option value="Vizag">Vizag</option>
             </select>

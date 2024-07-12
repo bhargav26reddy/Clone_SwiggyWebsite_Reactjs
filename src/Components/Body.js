@@ -22,7 +22,7 @@ const Body =()=>{
     const resa = useSelector((store)=>store.Topratedcusines.resMenu)
    
     const getresults =async()=>{
-        const obj = CITIES[toprated?.city]?CITIES[toprated?.city]:CITIES["Hyderabad"]
+        const obj = CITIES[toprated?.city]?CITIES[toprated?.city]:CITIES["Bangalore"]
         console.log(obj, 'obj')
         setSim(true)
         // https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
@@ -78,7 +78,7 @@ const Body =()=>{
             </div>
             {/* Top restaurant chains in Bangalore */}
             <div className="Topreschains">
-                <h1 className="font-bold">{`Top restaurant chains in ${toprated?.city?toprated?.city:"Hyderabad"}`}</h1>
+                <h1 className="font-bold">{`Top restaurant chains in ${toprated?.city?toprated?.city:"Bangalore"}`}</h1>
                 <div className="flex overflow-x-scroll">
                 {
                     toprated.Topreschain.map((data)=><Link to={`/res/${data.info.id}`}><ResCard key={data.info.id} info={data.info}/></Link>)
@@ -88,7 +88,7 @@ const Body =()=>{
             </div>
              {/* Restaurants with online food delivery in Bangalore*/}
             <div className="Topreschains">
-                <h1 className="font-bold">{`Restaurants with online food delivery in ${toprated?.city?toprated?.city:"Hyderabad"}`}</h1>
+                <h1 className="font-bold">{`Restaurants with online food delivery in ${toprated?.city?toprated?.city:"Bangalore"}`}</h1>
                 <div className="flex flex-wrap">
                 {
                     toprated.Allres[0]?.map((data)=><Link to={`/res/${data.info.id}`}><ResCard key={data.info.id} info={data.info}/></Link>)
