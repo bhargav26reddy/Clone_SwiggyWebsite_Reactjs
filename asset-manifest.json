@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Clone_SwiggyWebsite_Reactjs/static/css/main.d7255360.css",
-    "main.js": "/Clone_SwiggyWebsite_Reactjs/static/js/main.a66d6516.js",
+    "main.css": "/Clone_SwiggyWebsite_Reactjs/static/css/main.82b27294.css",
+    "main.js": "/Clone_SwiggyWebsite_Reactjs/static/js/main.052055e4.js",
     "static/js/453.3a9aa1d8.chunk.js": "/Clone_SwiggyWebsite_Reactjs/static/js/453.3a9aa1d8.chunk.js",
     "index.html": "/Clone_SwiggyWebsite_Reactjs/index.html",
-    "main.d7255360.css.map": "/Clone_SwiggyWebsite_Reactjs/static/css/main.d7255360.css.map",
-    "main.a66d6516.js.map": "/Clone_SwiggyWebsite_Reactjs/static/js/main.a66d6516.js.map",
+    "main.82b27294.css.map": "/Clone_SwiggyWebsite_Reactjs/static/css/main.82b27294.css.map",
+    "main.052055e4.js.map": "/Clone_SwiggyWebsite_Reactjs/static/js/main.052055e4.js.map",
     "453.3a9aa1d8.chunk.js.map": "/Clone_SwiggyWebsite_Reactjs/static/js/453.3a9aa1d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7255360.css",
-    "static/js/main.a66d6516.js"
+    "static/css/main.82b27294.css",
+    "static/js/main.052055e4.js"
   ]
 }
