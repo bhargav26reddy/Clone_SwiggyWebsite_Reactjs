@@ -1,6 +1,6 @@
 I've developed a Swiggy-Clone from scratch using React, and Parcel bundler, and ensured reliability through extensive testing with React Testing Library and Jest.
 
-🌟 Key Features 🌟
+🌟 Key Features🌟
 
 🎯 Infinite Scrolling: Loads more restaurants as you scroll.
 
